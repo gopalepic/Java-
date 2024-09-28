@@ -129,6 +129,31 @@ ClassLoader is a part of JRE, during the execution of the bytecode or created .c
 | Inheritance Tree | Creates a new tree | Uses a single inheritance tree |
 
 
+## public static void main()
+
+* public : Tells who can access the element or the method and what is the limit.
+* static : 
+
+
+## Data types in Java
+
+ 
+* Primitive Data type : boolean , char , int , short , byte , long , float and double
+
+Primitive means : basic building blocks of data manipulation
+
+* Non primitive means : memory address of a variable will be stored,because the reference types won't stores the variable value directly in memory.
+
+* Non - Primitive Data type :String , array
+
+
+## Java variables
+
+* Variable : Data cointainer that save the data values during java program execution
+
+
+ >> Key note , Java programs are first compiled to an intermediate form , then interpreted by the interpreter.
+
 
 
 
