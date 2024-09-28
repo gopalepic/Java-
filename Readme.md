@@ -154,6 +154,88 @@ Primitive means : basic building blocks of data manipulation
 
  >> Key note , Java programs are first compiled to an intermediate form , then interpreted by the interpreter.
 
+>> // Sigle line comments
+>> /* Multi line comments  */ 
+
+## Operators 
+
+* Arithemetic Operator
+
+This operations includes + , - , * , / and %
+
+* Unary Operator
+
+Java unary operators are he types that need only one operand to perform any operation like increment , decrement and negation etc.
+
+1) Unary minus(-)
+
+ Converts a positive value to a negative value or vice versa
+
+2) Not (!)
+
+ Converts true to false or vice versa
+
+3) Increment (++) & Decrement (--)
+
+    Post Increment (num++) and Pre Increment (++num)
+    &
+    Post Decrement (num--) and Post Decrement (--num)
+
+4) Bitwise Complement(~)
+
+  Returns on's complement representation of the input value or operand
+
+  * Assignment Operator
+
+  = , += , -= , *= , /= , %=
+
+  * Relational Operators
+
+  == , != , > , < ,<= , >= 
+
+  * Logical Operators
+
+  AND operator (&&)
+  OR  operator (||)
+  NOT operator (!)
+
+  * Ternary Operator
+
+  variable = expression1 ? expression2 : expression3
+
+  * Bitwise Operators
+
+  1) Bitwise OR(|)
+
+  this is binary operator, denoted by "|".
+
+  eg: if either of the bits is 1, it gives 1, else it shows 0.
+
+  2) Bitwise And(&)
+
+   this is binary operator.
+   if both bits are 1 , then it gives 1 , else shoes 0
+
+  3) Bitwise XOR(^)
+
+  this is binary operator
+  if corresponstings bits are different , then it gives 1 else gives 0
+
+  5) Bitwise Complement (~)
+
+  this is unary operator
+  makes 1 to 0 and 0 to 1 
+
+  
+
+
+
+
+
+
+  
+
+
 
 
 
