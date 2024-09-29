@@ -226,7 +226,9 @@ Java unary operators are he types that need only one operand to perform any oper
   this is unary operator
   makes 1 to 0 and 0 to 1 
 
+
   
+
 
 
 
