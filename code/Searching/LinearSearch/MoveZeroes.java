@@ -6,29 +6,31 @@ import java.util.Arrays;
 public class MoveZeroes {
     public static void main(String[] args) {
         int[] nums = {0,1,0,3,12};
-        System.out.println(Arrays.toString(moveZeroes(nums)));
+        moveZeroes(nums);
     }
 
-    public static int[] moveZeroes(int[] nums) {
-        int j = 0 ; 
-        for(int i = 1 ; i < nums.length ;i++){
-            if(nums[j] == 0 && i!= 0)
-            {
-                Swapping(nums,i,j);
-                j++;
-                
-                nums[i] = nums[j]; 
-             
-            }
+    public static void moveZeroes(int[] nums) {
+        int a = 0  ; 
+        for(int i = 0 ; i <nums.length ; i++){
+            if (nums[i]!=0){
+               
+                nums[a] = nums[i];
+                a++;
+               System.out.println("a value "+ a);
+             }
         }
-        return nums;
+        System.out.println("Array before " + Arrays.toString(nums));
+        for(int i = a; i<nums.length ; i++){
+            nums[i] = 0;
+            System.out.println("Array in a's iteration " + Arrays.toString(nums));
+        }
+       System.out.println("arrays after whole exection " +Arrays.toString(nums) );
     }
 
-    public static int[] Swapping(int[] arr , int i , int j ){
-            int temp = arr[j];
-             arr[j] = arr[i];
-             arr[i] = temp;
-            System.out.println("I am your beautiful array " + Arrays.toString(arr));
-            return arr;
-        }
+    // public static int[] Swapping(int[] arr , int i , int j ){
+    //         int temp = arr[j];
+    //          arr[j] = arr[i];
+    //          arr[i] = temp;
+    //         return arr;
+    //     }
 }
