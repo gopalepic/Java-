@@ -23,15 +23,15 @@ public class ReverseOnlyLetters {
                 i++;
                 j--;
             }
-        //     else if (!Character.isAlphabetic(s.charAt(i))){
-        //        resultString[i] = s.charAt(i);
-        //        i++;
-        //     }
-        //     else if(!Character.isAlphabetic(s.charAt(j))){
-        //         resultString[j] = s.charAt(j);
-        //         j--;
-        //     }
-        // }
+            else if (!Character.isAlphabetic(s.charAt(i))){
+               resultString[i] = s.charAt(i);
+               i++;
+            }
+            else if(!Character.isAlphabetic(s.charAt(j))){
+                resultString[j] = s.charAt(j);
+                j--;
+            }
+        }
         System.out.println(resultString);
 
          return new String(resultString);
