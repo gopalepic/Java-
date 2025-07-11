@@ -1,6 +1,4 @@
-package code.leetcodeproblems;
 
-import code.Sorting.BubbleSort.sorting;
 
 public class FindtheIndexoftheFirstOccurrenceinaString {
     public static void main(String[] args) {

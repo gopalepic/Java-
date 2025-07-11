@@ -36,8 +36,7 @@ class ListNode{
             
         }
 
-
-
+        System.out.println(hasCycleorNot(current));
     
     }
 
