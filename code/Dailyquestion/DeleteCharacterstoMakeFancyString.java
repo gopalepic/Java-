@@ -5,34 +5,31 @@ import java.util.HashMap;
 
 public class DeleteCharacterstoMakeFancyString {
     public static void main(String[] args) {
-        String s = "aaaaabc";
+        String s = "j9aaaabc";
         makeFancyString(s);
     }
 
-    public static void makeFancyString(String s) {
+    public static String makeFancyString(String s) {
 
-        char[] sb = new char[s.length()];
+        StringBuilder sb = new StringBuilder();
 
-        int count = 0;
+        sb.append(s.charAt(0));
+        int count = 1;
+        for (int i = 1; i < s.length(); i++) {
 
-        for (int i = 0; i < s.length(); i++) {
-            int j = i;
-            while (s.charAt(i) == s.charAt(j)) {
-                 count +=1;
-                 j++;
-               
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                count += 1;
+            } else {
+                count = 1;
             }
-            j = count;
-            if(count>2){
-                sb[i] = s.charAt(i);
-                sb[i+1] = s.charAt(i);
+
+            if (count < 3) {
+                sb.append(s.charAt(i));
             }
-            
-            sb[i] = s.charAt(i);
-            System.out.println(Arrays.toString(sb));
 
         }
+        System.out.println(sb);
+        return sb.toString();
 
     }
-
 }
