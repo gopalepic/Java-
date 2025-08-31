@@ -1,4 +1,4 @@
-package Contest.WeelyContenst464;
+package Contest.Contensts.WeelyContenst464;
 
 public class GCDofoddandeven {
 
