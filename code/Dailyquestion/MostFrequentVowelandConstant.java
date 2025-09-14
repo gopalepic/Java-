@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class MostFrequentVowelandConstant {
 
     public static void main(String[] args) {
-        String s = "successes";
+        String s = "succaeioesses";
         int result =  maxFreqSum(s);
         System.out.println("RESULt " + result);
     }
@@ -41,6 +41,10 @@ public class MostFrequentVowelandConstant {
                 maxValueInConsonants = val;
             }
         }
+
+        // for(char c : Vowels.keySet()){
+        //     System.out.println("VAlues in hashset are " + c);
+        // }
 
         int maxValueInVowels = 0;
         for(int val : Vowels.values()){
