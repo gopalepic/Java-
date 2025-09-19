@@ -15,13 +15,22 @@ public class HashMaps {
         }
         System.out.println("MAP " + map);
 
-       for( Map.Entry<Character,Integer> gopu: map.entrySet()){
+        int maximum = 0 ;
+    //    for( Map.Entry<Character,Integer> gopu: map.entrySet()){
 
-                  System.out.println("KEYS " + gopu.getKey() + " Value " + gopu.getValue());
+    //               System.out.println("KEYS " + gopu.getKey() + " Value " + gopu.getValue());
 
-                  if(gopu.getValue() == 4){
-                    System.out.println("I AM THE KEY " + gopu.getKey() + " having value " + gopu.getValue());
-                  }
+    //               if(gopu.getValue() == 4){
+    //                 System.out.println("I AM THE KEY " + gopu.getKey() + " having value " + gopu.getValue());
+    //               }
+    //     }
+
+        for(Map.Entry<Character,Integer> mapp : map.entrySet()){
+
+            if(mapp.getValue() > maximum){
+                maximum = mapp.getValue();
+                System.out.println("MAXIMUM value is " + maximum);
+            }
         }
     }
 }
