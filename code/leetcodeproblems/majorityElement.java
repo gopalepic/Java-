@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class majorityElement {
     public static void main(String[] args) {
-        int[] nums = { 3, 2, 3 };
+        int[] nums = {2,2,1,1,1,2,2 };
         int result = majorityElement(nums);
         System.out.println("RESULT " + result);
     }
@@ -30,32 +30,65 @@ public class majorityElement {
     // return key;
     // }
 
-    public static int majorityElement(int[] nums) {
+    // public static int majorityElement(int[] nums) {
+    //     // using Boyer Moore Voting Algorithmm
+
+    //     int count = 0;
+    //     int candidate = 0;
+
+    //     if(nums.length == 1){
+    //            return nums[0];
+    //     }
+    //     for (int i = 1; i < nums.length; i++) {
+
+    //         if (count == 0) {
+    //             candidate = nums[i];
+    //         }
+
+    //         else if (nums[i] == candidate) {
+    //             count++;
+    //         }
+
+    //         else {
+    //             count--;
+    //         }
+
+    //     }
+
+    //     return candidate;
+    // }
+
+     public static int majorityElement(int[] nums) {
         // using Boyer Moore Voting Algorithmm
 
-        int count = 0;
-        int candidate = 0;
+       int cnt = 0 ;
+       int element =Integer.MIN_VALUE;
 
-        if(nums.length == 1){
-               return nums[0];
+       for(int i = 0 ; i<nums.length ; i++){
+          if(cnt == 0 ){
+            element = nums[i];
+            cnt = 1;
+          }
+
+          else if (element!=nums[i]){
+            cnt--;
+          }
+          else{
+            cnt++;
+          }
+       }
+      cnt=0;
+       for(int i = 0 ;i<nums.length ; i++){
+        if(nums[i]==element){
+           cnt++;
         }
-        for (int i = 1; i < nums.length; i++) {
+       }
+       if(cnt > nums.length/2){
+         return element;
+       }
 
-            if (count == 0) {
-                candidate = nums[i];
-            }
-
-            else if (nums[i] == candidate) {
-                count++;
-            }
-
-            else {
-                count--;
-            }
-
-        }
-
-        return candidate;
+       return -1;
     }
+
 
 }

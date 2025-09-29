@@ -1,37 +1,55 @@
-package leetcodeproblems;
+package code.leetcodeproblems;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class defusetheBomb {
     public static void main(String[] args) {
         int[] code = { 5, 7, 1, 4 };
-        int k = 3;
+        int k = -2;
         decrypt(code, k);
     }
 
-    public static void decrypt(int[] code, int k) {
-        int[] result = new int[code.length];
-        ArrayList<Integer> arr = new ArrayList<>();
-        // if(k == 0){
-        // return new int[] {0};
-        // }
+    public static int[] decrypt(int[] code, int k) {
 
-        for (int i = 0; i < code.length; i++) {
+        int[] decryptCode = new int[code.length];
 
+        if (k > 0) {
+            for (int i = 0; i < code.length; i++) {
 
-            int sum = 0;
-            if (k > 0) {
-                for (int j = 1; j < k; j++) {
-
-                    sum += code[(i + j) % code.length];
+                int j = i + 1;
+                int cnt = 0;
+                int sum = 0;
+                while (cnt < k) {
+                    sum += code[j % code.length];
+                    j++;
+                    cnt++;
                 }
-                result[i] = sum;
+
+                decryptCode[i] = sum;
             }
-            else if (k<0){
-                
+
+        } else if (k < 0) {
+            for (int i = 0; i < code.length; i++) {
+
+                int j = i - 1;
+                System.out.println("J :::" +j );
+                int cnt = 0;
+                int sum = 0;
+                while (cnt > k) {
+                    
+                    sum += code[(j%code.length + code.length)%code.length];
+                    j--;
+                    cnt--;
+                }
+
+                decryptCode[i] = sum;
             }
         }
+        else{
+            
+        }
+
+        return decryptCode;
 
     }
 }
