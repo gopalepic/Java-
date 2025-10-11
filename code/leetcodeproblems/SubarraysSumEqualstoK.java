@@ -1,5 +1,7 @@
 package code.leetcodeproblems;
 
+import java.util.HashMap;
+
 public class SubarraysSumEqualstoK {
     public static void main(String[] args) {
 
@@ -9,30 +11,44 @@ public class SubarraysSumEqualstoK {
         System.out.println("ANS " + ans);
     }
 
+    // public static int subarraySum(int[] nums, int k) {
+
+    // int cnt = 0 ;
+
+    // for(int i = 0 ; i<nums.length ; i++){
+    // int sum = 0 ;
+    // for(int j = i ; j<nums.length ; j++){
+
+    // sum+=nums[j];
+    // if(sum == k ){
+    // cnt++;
+    // }
+
+    // }
+    // }
+    // return cnt ;
+    // }
+
     public static int subarraySum(int[] nums, int k) {
 
-        int right = 0;
-        int sum = 0;
         int cnt = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-        while (right < nums.length) {
-            if (nums[right] == k) {
-                
-                cnt += 1;
-                sum = 0;
-                right++;
-                continue;
+        map.put(0, 1);
+        int prefixSum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            prefixSum += nums[i];
+
+            if (map.containsKey(prefixSum - k)) {
+                cnt += map.get(prefixSum-k);
+
             }
-            sum += nums[right];
-            if (sum == k) {
-                cnt += 1;
+            map.put(prefixSum, 1);
 
-                sum = 0;
-                continue;
-            }
-
-            right++;
         }
+        System.out.println("HASHMAP : + "+ map);
         return cnt;
     }
 }
