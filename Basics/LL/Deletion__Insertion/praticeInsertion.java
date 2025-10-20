@@ -1,5 +1,6 @@
 package Basics.LL.Deletion__Insertion;
-import java.util.Scanner;
+
+
 class Node {
     int data;
     Node next;
@@ -15,8 +16,7 @@ class Node {
     }
 }
 
-public class DeleteKthNode {
-
+public class praticeInsertion {
     public static Node arr2LL(int[] arr) {
 
         Node head = new Node(arr[0]);
@@ -38,41 +38,48 @@ public class DeleteKthNode {
         }
     }
 
-    public static Node delete(Node head, int k) {
-        if (head == null) {
-            return head;
-        }
-        if (k == 1) {
-            head = head.next;
-            return head;
-        }
-        Node prev=null ; Node temp = head ; int cnt =0;
+    public static Node insertAtK(Node head, int ele, int k) {
+        
 
-        while(temp != null){
-            cnt++;
-            if(cnt == k ){
-                prev.next = prev.next.next;
-                break;
+        if (head.next == null) {
+            if (k == 1) {
+              Node newNode = new Node(ele);
+             
+              return newNode;
             }
-            prev = temp;
-            temp=temp.next;
+        }
+
+        if (k == 1) {
+            Node newNode = new Node(ele,head);
+            return newNode;
+        }
+
+        int cnt = 0;
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+
+           cnt++;
+
+           if(cnt==k){
+              Node addNode = new Node(ele);
+              prev.next = addNode;
+              addNode.next=temp;
+              break;
+           }
+           prev=temp;
+           temp=temp.next;
+            
         }
 
         return head;
+
     }
 
     public static void main(String[] args) {
-
-        int[] arr ={1,2,3,4,5};
-
-        Node result1 = arr2LL(arr); // LL ban gaye
-
-        Scanner scn = new Scanner(System.in);
-        System.out.print("Enter kth node to delete: ");
-        int k = scn.nextInt();  // User se kth node leliya delete krne ke leye 
-
-        Node result2 = delete(result1, k);
-
-        printLL(result2);     
+        int[] arr = { 1, 2, 3, 4, 5, 6 };
+        Node result = arr2LL(arr);
+        Node result2 = insertAtK(result, 26, 2);
+        printLL(result2);
     }
 }

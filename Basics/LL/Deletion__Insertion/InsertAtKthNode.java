@@ -75,7 +75,7 @@ public class InsertAtKthNode {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5, 6 };
         Node result = arr2LL(arr);
-        Node result2 = insertAtK(result, 26, 8);
+        Node result2 = insertAtK(result, 26, 6);
         printLL(result2);
     }
 

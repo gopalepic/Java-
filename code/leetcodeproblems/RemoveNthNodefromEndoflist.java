@@ -1,4 +1,5 @@
 package code.leetcodeproblems;
+
 class ListNode {
     int val;
     ListNode next;
@@ -18,8 +19,7 @@ class ListNode {
 
 public class RemoveNthNodefromEndoflist {
 
-
-     public static void printLL(ListNode head) {
+    public static void printLL(ListNode head) {
         while (head != null) {
             System.out.print(head.val + " - > " + (head.next == null ? "null " : " "));
             head = head.next;
@@ -40,32 +40,48 @@ public class RemoveNthNodefromEndoflist {
 
     }
 
-      public static ListNode removeNthFromEnd(ListNode head, int n) {
-        
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+
         // First find length;
         // then minus iterative from length , then function to remove
 
-        //length
+    
 
-        int cnt = 0 ;
+        int cnt = 0;
         ListNode temp = head;
 
-        while(temp!= null){
+        while (temp != null) {
             cnt++;
-            temp= temp.next;
+            temp = temp.next;
         }
-        System.out.println("LEN " + cnt);
 
-        return temp;
-    } 
+        cnt++;        
+        int removeafterIndex = cnt - n;
+
+        temp = head;
+        ListNode prev = null;
+        cnt = 0;
+       
+        while (temp.next != null) {
+            cnt++;
+            if (cnt == removeafterIndex) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev=temp;
+            temp = temp.next;
+        }
+
+        return head;
+    }
 
     public static void main(String[] args) {
 
-        int[] arr = {1,2,3,4,5,6};
+        int[] arr = { 1,2 };
         ListNode result = arr2LL(arr);
 
-        ListNode result2 = removeNthFromEnd(result, 4);
-
+        ListNode result2 = removeNthFromEnd(result, 2);
+        printLL(result2);
 
     }
 }
