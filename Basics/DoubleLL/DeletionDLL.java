@@ -1,5 +1,6 @@
 package Basics.DoubleLL;
 
+
 class Node{
     int data ; 
     Node next ; 
@@ -19,9 +20,12 @@ class Node{
         this.prev = null;
     }
 }
-public class DLL {
 
-    public static Node arr2DLL(int[] arr){
+
+public class DeletionDLL {
+
+
+      public static Node arr2DLL(int[] arr){
         Node head = new Node(arr[0]);
         Node prev = head;
 
@@ -42,10 +46,42 @@ public class DLL {
 
     }
 
-    public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
-        Node result = arr2DLL(arr);
-        print(result);
+    public static Node Deletehead(Node head){
+        if(head == null){
+            return head;
+        }
+        
+        head= head.next;
+        head.prev = null;
+
+        return head;
+
     }
-    
+
+    public static Node DeleteTail(Node head){
+        if(head==null){
+            return head;
+        }
+
+        Node temp = head;
+
+        while(temp.next.next!=null){
+            temp=temp.next;
+        }
+        temp.next=null;
+
+        return head;
+    }
+
+    public static Node deleteKthNode(Node head , int K ){
+
+        
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6};
+        Node result = arr2DLL(arr);
+        Node result1 = DeleteTail(result);
+        print(result1);
+    }
 }
