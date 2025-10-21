@@ -1,5 +1,6 @@
 package Basics.DoubleLL;
 
+import Basics.LL.Deletion__Insertion.DeleteKthNode;
 
 class Node{
     int data ; 
@@ -47,7 +48,7 @@ public class DeletionDLL {
     }
 
     public static Node Deletehead(Node head){
-        if(head == null){
+        if(head == null || head.next == null){
             return head;
         }
         
@@ -59,8 +60,8 @@ public class DeletionDLL {
     }
 
     public static Node DeleteTail(Node head){
-        if(head==null){
-            return head;
+        if(head==null || head.next == null){
+            return null;
         }
 
         Node temp = head;
@@ -68,20 +69,96 @@ public class DeletionDLL {
         while(temp.next.next!=null){
             temp=temp.next;
         }
+        temp.next.prev = null;
         temp.next=null;
+        
 
+        return head;
+    }
+
+    private static Node DeleteTailApproach1 (Node head ){
+        if(head==null || head.next == null){
+            return null;
+        }
+        Node temp = head;
+        while(temp.next != null){
+             temp=temp.next;
+        }
+        Node back = temp.prev;
+        back.next = null;
+        temp.prev = null;
         return head;
     }
 
     public static Node deleteKthNode(Node head , int K ){
 
+        Node temp = head;
+
+        int cnt = 0 ; 
+
+        while(temp!=null){
+            cnt++;
+
+            if(cnt == K){
+                break;
+            }
+            temp=temp.next;
+        }
+
+        // two cases ,if its the first element 
+        // means it just points to next , no prev 
+
+        // or what if it the tail element 
+        // means not next  , only prev points to some node 
+
+        Node back = temp.prev;
+        Node front = temp.next;
+
+        if(back == null && front == null){
+            return null;
+        }
+
+        if(back == null && front!=null){
+            // delete the first element
+
+           head =front ;
+           head.prev = null;
+
+            return head;
+            
+        }
+        if(back != null && front == null){
+             // delete the tail element 
+
+             back.next = null;
+             temp.prev =null;
+
+             return head;
+        }
+
+        back.next=front;
+        front.prev = back;
+        temp.next = null;
+        temp.prev = null;
+
+        return head;
         
+    }
+
+ // when we are requried to delete a particular NODE 
+
+ // constrains , item to be deleted is never the head of the DLL
+    public static Node deleteElement(Node head, Node targetNode ){
+        
+       
+ 
+
     }
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6};
         Node result = arr2DLL(arr);
-        Node result1 = DeleteTail(result);
+        Node result1 = deleteKthNode(result,1);
         print(result1);
     }
 }
