@@ -1,43 +1,39 @@
+package code.leetcodeproblems;
+
 class Node {
     int data; 
     Node next; 
 
     Node(int newdata) {
-        data = newdata;
-        next = null;
+       this.data = newdata;
+       this.next = null;
+    }
+
+    Node (int newdata , Node next1){
+        this.data = newdata;
+        this.next = next1;
     }
 }
 
 public class ReverseLinkedList {
     
-    Node head; // head of the list
 
-    // Method to calculate the length of the linked list
-    public Node reverse() {
-        Node prev = null , current = head ;
+    public static Node int2LL(int[] arr){
+      Node head = new Node(arr[0]);
+      Node mover = head;
+      
+      for(int i = 1 ; i<arr.length ; i++){
+         Node temp = new Node(arr[i]);
+         mover.next = temp;
+         mover = temp;
+      }
 
-        while (current != null ) {
-            Node nxt = current;
-             current = current.next;
-              nxt.next = prev;
-              prev = nxt;
-        }
-
-        return prev; 
+      return head;
     }
 
     public static void main(String[] args) {
-        ReverseLinkedList list = new ReverseLinkedList();
-        
-        // Adding some nodes to the linked list
-        list.head = new Node(1);
-        list.head.next = new Node(2);
-        list.head.next.next = new Node(3);
-        list.head.next.next.next = new Node(4);
+       
 
-        // Get the length of the linked list
-        Node length = list.reverse();
-        System.out.println(" Out reverse list look likes " + length);
     }
 }
 
