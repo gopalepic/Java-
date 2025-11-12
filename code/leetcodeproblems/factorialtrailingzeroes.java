@@ -1,5 +1,8 @@
+package code.leetcodeproblems;
 public class factorialtrailingzeroes {
     public static void main(String[] args) {
+
+        System.out.println(trailingZeroes(7));
     }
 
                               

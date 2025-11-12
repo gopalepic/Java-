@@ -17,10 +17,11 @@ public class Bubble {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    System.out.println("ARRAY AFTER EACH ITERATIONS " + Arrays.toString(arr));
                 }
             }
         }
+
+        System.out.println("AFTER SORTING " + Arrays.toString(arr));
 
     }
 }
