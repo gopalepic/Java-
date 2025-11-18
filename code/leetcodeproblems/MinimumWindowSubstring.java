@@ -1,5 +1,3 @@
-package code.leetcodeproblems;
-
 import java.util.HashMap;
 import java.util.*;
 import java.util.Set;
@@ -42,12 +40,12 @@ public class MinimumWindowSubstring {
                 list.add(c);
                 ans.add(c);
             }
-            if (list.size() == 3) {
+            if (list.size() == map.size()) {
                 isequaltoSize = true;
             }
 
             // if HASHset size equal to 3 ,then finding the length
-            if (isequaltoSize && map.containsKey(c)) {
+            if (isequaltoSize ) {
                 if (j - i + 1 < minlen) {
                     minlen = j - i + 1;
                     result = new ArrayList<>(ans) ;
