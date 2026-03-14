@@ -69,10 +69,10 @@ public class NQueens {
         }   
          for(int row = 0 ; row < n ; row++){
             if(isSafe1(row,col,board , n )){
-                        System.out.println("BEFOREE : " + Arrays.deepToString(board));
+             System.out.println("BEFOREE : " + Arrays.deepToString(board));
 
                 board[row][col] = 'Q';
-                                        System.out.println("After : " + Arrays.deepToString(board));
+                System.out.println("After : " + Arrays.deepToString(board));
 
                 solve(col+1, board, ans, n);// recur for he next coln 
                 board[row][col] = '.';
