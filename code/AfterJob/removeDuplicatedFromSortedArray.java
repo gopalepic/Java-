@@ -1,4 +1,4 @@
-package AfterJob;
+package code.AfterJob;
 import java.util.HashSet;
 public class removeDuplicatedFromSortedArray {
     public static void main(String[] args) {
