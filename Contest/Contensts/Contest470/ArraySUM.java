@@ -1,0 +1,24 @@
+package Contest.Contensts.Contest470;
+
+public class ArraySUM {
+    public static void main(String[] args) {
+        Solution sl = new Solution();
+        int[] nums = { 1,3,5,7};
+       System.out.println( sl.alternatingSum(nums));
+    }
+}
+
+class Solution {
+    public int alternatingSum(int[] nums) {
+
+        int sum = 0 ;
+        for(int i = 0 ; i<nums.length ; i++){
+            if(i%2 == 0){
+                sum+=nums[i];
+            }else{
+                sum-=nums[i];
+            }
+        }
+        return sum;
+    }
+}
